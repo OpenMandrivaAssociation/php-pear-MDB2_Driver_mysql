@@ -14,7 +14,7 @@ Requires:       php-mysql
 Requires(post): php-pear
 Requires(preun): php-pear
 Requires:       php-pear
-Requires:       php-pear-MDB2
+BuildRequires:  php-pear
 BuildArch:      noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
