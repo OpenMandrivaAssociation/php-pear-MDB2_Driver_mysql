@@ -16,7 +16,7 @@ Requires(preun): php-pear
 Requires:       php-pear
 BuildRequires:  php-pear
 BuildArch:      noarch
-Epoch:		0
+Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
