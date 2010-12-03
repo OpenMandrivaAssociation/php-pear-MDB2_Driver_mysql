@@ -4,7 +4,7 @@
 
 Name:           php-pear-%{upstream_name}
 Version:        1.5.0
-Release:        %mkrel 0.0.b2.1
+Release:        %mkrel 0.0.b2.2
 Summary:	Mysql MDB2 driver
 License:        PHP License
 Group:          Development/PHP
