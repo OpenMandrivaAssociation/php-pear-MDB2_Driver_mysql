@@ -4,7 +4,7 @@
 
 Name:           php-pear-%{upstream_name}
 Version:        1.5.0
-Release:        %mkrel 0.0.b3.2
+Release:        %mkrel 0.0.b3.1
 Summary:	Mysql MDB2 driver
 License:        PHP License
 Group:          Development/PHP
@@ -52,7 +52,7 @@ pear install --nodeps --soft --force --register-only \
 %if %mdkversion < 201000
 if [ "$1" -eq "0" ]; then
     pear uninstall --nodeps --ignore-errors --register-only \
-        %{upstream_name} >/dev/null || :
+        %{pear_name} >/dev/null || :
 fi
 %endif
 
@@ -62,3 +62,47 @@ fi
 %{_datadir}/pear/data/%{upstream_name}
 %{_datadir}/pear/packages/%{upstream_name}.xml
 
+
+
+%changelog
+* Fri May 27 2011 Oden Eriksson <oeriksson@mandriva.com> 1:1.5.0-0.0.b3.1mdv2011.0
++ Revision: 679278
+- 1.5.0b3
+
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 1:1.5.0-0.0.b2.3
++ Revision: 667573
+- mass rebuild
+
+* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 1:1.5.0-0.0.b2.2mdv2011.0
++ Revision: 607116
+- rebuild
+
+* Fri Mar 26 2010 Oden Eriksson <oeriksson@mandriva.com> 1:1.5.0-0.0.b2.1mdv2010.1
++ Revision: 527660
+- bump epoch
+- 1.5.0b2
+- fix versioning
+
+* Thu Nov 26 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.0b1-4mdv2010.1
++ Revision: 470289
+- spec cleanup
+- use pear installer
+- don't ship tests, even in documentation
+- own all directories
+- use rpm filetriggers starting from mandriva 2010.1
+
+* Thu Sep 03 2009 Christophe Fergeau <cfergeau@mandriva.com> 1.5.0b1-3mdv2010.0
++ Revision: 426653
+- rebuild
+
+* Wed Dec 31 2008 Oden Eriksson <oeriksson@mandriva.com> 1.5.0b1-2mdv2009.1
++ Revision: 321873
+- rebuild
+
+* Thu Oct 16 2008 Oden Eriksson <oeriksson@mandriva.com> 1.5.0b1-1mdv2009.1
++ Revision: 294353
+- import php-pear-MDB2_Driver_mysql
+
+
+* Thu Oct 16 2008 Oden Eriksson <oeriksson@mandriva.com> 1.5.0b1-1mdv2009.0
+- initial Mandriva package
