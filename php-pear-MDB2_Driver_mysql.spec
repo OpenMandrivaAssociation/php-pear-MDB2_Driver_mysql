@@ -4,7 +4,7 @@
 
 Name:           php-pear-%{upstream_name}
 Version:        1.5.0
-Release:        %mkrel 0.0.b3.1
+Release:        0.0.b3.2
 Summary:	Mysql MDB2 driver
 License:        PHP License
 Group:          Development/PHP
@@ -17,7 +17,6 @@ Requires:       php-pear
 BuildRequires:  php-pear
 BuildArch:      noarch
 Epoch:		1
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 MDB2 MySQL driver.
@@ -40,7 +39,6 @@ install -d %{buildroot}%{_datadir}/pear/packages
 install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 %clean
-rm -rf %{buildroot}
 
 
 
