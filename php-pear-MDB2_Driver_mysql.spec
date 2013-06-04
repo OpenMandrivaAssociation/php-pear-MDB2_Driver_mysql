@@ -2,14 +2,16 @@
 %define        _subclass        Driver_mysql
 %define        upstream_name    %{_class}_%{_subclass}
 
+%define			beta b4
+
 Name:           php-pear-%{upstream_name}
-Version:        1.5.0
-Release:        0.0.b4
+Version:        1.5.0b4
+Release:        1
 Summary:	Mysql MDB2 driver
 License:        PHP License
 Group:          Development/PHP
 URL:            http://pear.php.net/package/MDB2_Driver_mysql/
-Source0:        http://download.pear.php.net/package/MDB2_Driver_mysql-%{version}b4.tgz
+Source0:        http://download.pear.php.net/package/MDB2_Driver_mysql-%{version}.tgz
 Requires:       php-mysql
 Requires(post): php-pear
 Requires(preun): php-pear
@@ -22,13 +24,13 @@ Epoch:		1
 MDB2 MySQL driver.
 
 %prep
-%setup -q -c -n %{name}-%{version}b3
-mv package.xml %{upstream_name}-%{version}b3/%{upstream_name}.xml
+%setup -q -c -n %{name}-%{version}%{beta}
+mv package.xml %{upstream_name}-%{version}%{beta}/%{upstream_name}.xml
 
 %install
 %{__rm} -rf %{buildroot}
 
-cd %{upstream_name}-%{version}b3
+cd %{upstream_name}-%{version}%{beta}
 pear install --nodeps --packagingroot %{buildroot} %{upstream_name}.xml
 rm -rf %{buildroot}%{_datadir}/pear/.??*
 
@@ -92,4 +94,5 @@ install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 * Thu Oct 16 2008 Oden Eriksson <oeriksson@mandriva.com> 1.5.0b1-1mdv2009.0
 - initial Mandriva package
+
 
